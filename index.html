@@ -55,6 +55,7 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="site-header" aria-label="サイトヘッダー">
@@ -69,6 +70,8 @@
         <a href="#about">ご挨拶</a>
         <a href="#work">おもてなし</a>
         <a href="#skills">館内案内</a>
+        <a href="#records">実績帳</a>
+        <a href="#repos">GitHub</a>
         <a href="#contact">帳場</a>
       </nav>
     </header>
@@ -90,7 +93,7 @@
         </div>
       </section>
 
-      <section class="intro-band" id="about">
+      <section class="intro-band reveal" id="about">
         <div class="section-inner two-column">
           <div>
             <p class="section-label">ご挨拶</p>
@@ -109,26 +112,26 @@
         </div>
       </section>
 
-      <section class="experience" id="work">
+      <section class="experience reveal" id="work">
         <div class="section-inner">
           <p class="section-label">おもてなし</p>
           <h2>この宿で味わえること</h2>
           <div class="feature-grid">
-            <article class="feature">
+            <article class="feature reveal">
               <span class="feature-number">一</span>
               <h3>医療 NLP の湯</h3>
               <p>
                 医療テキストや主観表現を対象に、言葉の奥行きをモデルがどう受け取るかを観察します。
               </p>
             </article>
-            <article class="feature">
+            <article class="feature reveal">
               <span class="feature-number">二</span>
               <h3>LLM 実装の間</h3>
               <p>
                 アイデアを小さく検証し、使えるプロトタイプや API として整えることを好みます。
               </p>
             </article>
-            <article class="feature">
+            <article class="feature reveal">
               <span class="feature-number">三</span>
               <h3>改善の庭</h3>
               <p>
@@ -139,34 +142,122 @@
         </div>
       </section>
 
-      <section class="skills" id="skills">
+      <section class="skills reveal" id="skills">
         <div class="section-inner">
           <div class="section-heading">
             <p class="section-label">館内案内</p>
             <h2>扱う道具</h2>
           </div>
-          <div class="skill-layout">
-            <div class="skill-group">
-              <h3>Languages</h3>
-              <p>Python / SQL / JavaScript / TypeScript / C++ / Java</p>
+          <div class="skill-switcher">
+            <div class="skill-tabs" role="tablist" aria-label="扱う道具の切り替え">
+              <button class="skill-tab is-active" type="button" role="tab" aria-selected="true" data-skill="languages">
+                Languages
+              </button>
+              <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill="ai">
+                AI & Data
+              </button>
+              <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill="backend">
+                Backend
+              </button>
+              <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill="tools">
+                Tools
+              </button>
             </div>
-            <div class="skill-group">
-              <h3>AI & Data</h3>
-              <p>NLP / LLMs / BERT / PyTorch / NumPy / Pandas</p>
-            </div>
-            <div class="skill-group">
-              <h3>Backend</h3>
-              <p>API development / PostgreSQL / AWS</p>
-            </div>
-            <div class="skill-group">
-              <h3>Tools</h3>
-              <p>Git / GitHub / VS Code</p>
-            </div>
+            <article class="skill-panel" aria-live="polite">
+              <p class="panel-kicker" id="skill-category">Languages</p>
+              <h3 id="skill-title">言葉を選び、処理を組み立てる</h3>
+              <p id="skill-description">
+                Python を軸に、データ処理、API、実験コードを行き来します。必要に応じて Web 側の言語も使い、検証から見える形までつなぎます。
+              </p>
+              <div class="skill-tags" id="skill-tags" aria-label="関連技術">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>JavaScript</span>
+                <span>TypeScript</span>
+                <span>C++</span>
+                <span>Java</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="closing" id="contact">
+      <section class="theme-lottery reveal" id="theme">
+        <div class="section-inner lottery-inner">
+          <div>
+            <p class="section-label">本日の一題</p>
+            <h2>今日の研究テーマを一枚ひく。</h2>
+          </div>
+          <div class="lottery-card" aria-live="polite">
+            <p class="panel-kicker">研究札</p>
+            <h3 id="theme-title">小さな評価指標をひとつ作る</h3>
+            <p id="theme-body">
+              今日は、モデルの出力を眺めるだけで終わらせず、良し悪しを比べるための小さなものさしを作る日です。
+            </p>
+            <button class="draw-button" type="button" id="theme-draw">もう一枚ひく</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="records reveal" id="records">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-label">実績帳</p>
+            <h2>研究と制作の足あとを絞り込む。</h2>
+          </div>
+          <div class="filter-bar" aria-label="実績の絞り込み">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">すべて</button>
+            <button class="filter-button" type="button" data-filter="research" aria-pressed="false">研究</button>
+            <button class="filter-button" type="button" data-filter="build" aria-pressed="false">制作</button>
+            <button class="filter-button" type="button" data-filter="learning" aria-pressed="false">学習</button>
+          </div>
+          <div class="record-grid">
+            <article class="record-card reveal" data-kind="research">
+              <p class="record-type">研究</p>
+              <h3>医療自然言語処理</h3>
+              <p>医療テキストを対象に、主観的な表現や言葉の揺れをどう扱うかを探ります。</p>
+            </article>
+            <article class="record-card reveal" data-kind="research">
+              <p class="record-type">研究</p>
+              <h3>LLM と主観表現</h3>
+              <p>LLM が曖昧さや人間らしい評価語をどう解釈するか、実験と観察で確かめます。</p>
+            </article>
+            <article class="record-card reveal" data-kind="build">
+              <p class="record-type">制作</p>
+              <h3>API とプロトタイプ</h3>
+              <p>アイデアを小さく動く形にして、評価や改善につながる道具として整えます。</p>
+            </article>
+            <article class="record-card reveal" data-kind="build">
+              <p class="record-type">制作</p>
+              <h3>自己紹介サイト</h3>
+              <p>静的サイトにSEO、GitHub連携、インタラクションを足しながら育てています。</p>
+            </article>
+            <article class="record-card reveal" data-kind="learning">
+              <p class="record-type">学習</p>
+              <h3>バックエンド開発</h3>
+              <p>データベース、API、クラウドをつなぎ、研究を使えるシステムに近づけます。</p>
+            </article>
+            <article class="record-card reveal" data-kind="learning">
+              <p class="record-type">学習</p>
+              <h3>フロントエンド表現</h3>
+              <p>伝えたい内容が自然に届くように、画面設計と動きの作り方を磨きます。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="repositories reveal" id="repos">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-label">GitHub の棚</p>
+            <h2>最近手を入れたリポジトリ。</h2>
+          </div>
+          <p class="repo-status" id="repo-status">GitHub から公開リポジトリを読み込んでいます。</p>
+          <div class="repo-grid" id="repo-list" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="closing reveal" id="contact">
         <div class="section-inner closing-inner">
           <p class="section-label">帳場</p>
           <h2>研究の記録と制作の足あとを、GitHub に置いています。</h2>
