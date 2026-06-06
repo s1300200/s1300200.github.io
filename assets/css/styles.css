@@ -105,6 +105,13 @@ a {
   color: var(--white);
 }
 
+<<<<<<< HEAD
+=======
+/* =========================
+   Hero
+========================= */
+
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
 .hero {
   position: relative;
   min-height: 92vh;
@@ -115,12 +122,17 @@ a {
   background: #11140f;
 }
 
+<<<<<<< HEAD
+=======
+/* 背景画像：文字のあとに出る */
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 0;
   background:
+<<<<<<< HEAD
     linear-gradient(90deg, rgba(9, 12, 8, 0.72), rgba(9, 12, 8, 0.34) 48%, rgba(9, 12, 8, 0.08)),
     url("../ryokan-hero.svg") center / cover;
   opacity: 0;
@@ -139,11 +151,27 @@ a {
   background: linear-gradient(180deg, rgba(245, 241, 232, 0), var(--paper));
 }
 
+=======
+    linear-gradient(
+      90deg,
+      rgba(9, 12, 8, 0.72),
+      rgba(9, 12, 8, 0.34) 48%,
+      rgba(9, 12, 8, 0.08)
+    ),
+    url("../ryokan-hero-generated.jpg") center / cover;
+  opacity: 0;
+  transform: scale(1.04);
+  animation: heroImageReveal 2400ms cubic-bezier(0.22, 1, 0.36, 1) 1600ms both;
+}
+
+/* 背景の上の光・暗さ */
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
 .hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
+<<<<<<< HEAD
     radial-gradient(circle at 16% 34%, rgba(184, 138, 69, 0.18), transparent 28%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(10, 10, 8, 0.32));
   opacity: 0;
@@ -178,6 +206,70 @@ a {
 
 .hero-content > :nth-child(4) {
   animation-delay: 1120ms;
+=======
+    radial-gradient(circle at 16% 34%, rgba(184, 138, 69, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(10, 10, 8, 0.34));
+  opacity: 0;
+  animation: heroOverlayReveal 2200ms cubic-bezier(0.22, 1, 0.36, 1) 1750ms both;
+}
+
+/* 文字位置 */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-bottom: 13vh;
+}
+
+/* 文字：完全に消えた状態から、先に同時に出る */
+.hero-content > * {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroTextReveal 1500ms cubic-bezier(0.16, 1, 0.3, 1) 600ms both;
+}
+
+/* すべて同時 */
+.hero-content > :nth-child(1),
+.hero-content > :nth-child(2),
+.hero-content > :nth-child(3),
+.hero-content > :nth-child(4) {
+  animation-delay: 600ms;
+}
+
+@keyframes heroTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageReveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heroOverlayReveal {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
 }
 
 .kicker,
@@ -224,7 +316,14 @@ section h2 {
   border-radius: 999px;
   font-weight: 700;
   line-height: 1.2;
+<<<<<<< HEAD
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+=======
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
 }
 
 .button:hover {
@@ -356,7 +455,15 @@ section[id] {
   font: inherit;
   font-weight: 700;
   cursor: pointer;
+<<<<<<< HEAD
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+=======
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
 }
 
 .skill-tab {
@@ -581,7 +688,13 @@ section[id] {
 .reveal {
   opacity: 0;
   transform: translateY(24px);
+<<<<<<< HEAD
   transition: opacity 700ms ease, transform 700ms ease;
+=======
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
 }
 
 .reveal.is-visible {
@@ -617,6 +730,13 @@ section[id] {
   font-size: 13px;
 }
 
+<<<<<<< HEAD
+=======
+/* =========================
+   Responsive
+========================= */
+
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
 @media (max-width: 900px) {
   .site-header {
     align-items: flex-start;
@@ -628,7 +748,10 @@ section[id] {
 
   .hero {
     min-height: 86vh;
+<<<<<<< HEAD
     background-position: center;
+=======
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
   }
 
   .two-column,
@@ -675,10 +798,13 @@ section[id] {
     padding-bottom: 11vh;
   }
 
+<<<<<<< HEAD
   .hero::after {
     height: 14vh;
   }
 
+=======
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
   .section-inner {
     padding: 62px 0;
   }
@@ -712,6 +838,13 @@ section[id] {
   }
 }
 
+<<<<<<< HEAD
+=======
+/* =========================
+   Reduced motion
+========================= */
+
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -733,6 +866,7 @@ section[id] {
   .hero::before,
   .hero-overlay,
   .hero-content > * {
+<<<<<<< HEAD
     animation-name: heroOpacityFade;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -801,3 +935,10 @@ section[id] {
     transform: translateY(0);
   }
 }
+=======
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+>>>>>>> 35c2d1c (Update hero fade-in animation and image timing)
