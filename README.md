@@ -20,7 +20,7 @@ GitHub Pages で公開している自己紹介サイトです。
     │   └── styles.css
     ├── js
     │   └── main.js
-    └── ryokan-hero-generated.jpg
+    └── ryokan-hero.svg
 ```
 
 ## 編集する場所
