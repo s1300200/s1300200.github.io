@@ -132,7 +132,7 @@ a {
       rgba(9, 12, 8, 0.34) 48%,
       rgba(9, 12, 8, 0.08)
     ),
-    url("../ryokan-hero-generated.jpg") center / cover;
+    url("../ryokan-hero-seo.jpg") center / cover;
   opacity: 0;
   transform: scale(1.035);
   animation: heroImageFadeIn 2400ms cubic-bezier(0.22, 1, 0.36, 1) 1550ms both;
@@ -765,11 +765,13 @@ section[id] {
   }
 }
 
+/* 
 /* =========================
    Reduced motion
 ========================= */
-
-@media (prefers-reduced-motion: reduce) {
+/*  ユーザ側の設定で「視覚効果を減らす」があるとき。
+ けどフェードインあったほうがそれっぽさがでるのでコメントアウト */
+/* @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
@@ -794,4 +796,4 @@ section[id] {
     opacity: 1;
     transform: none;
   }
-}
+} */
