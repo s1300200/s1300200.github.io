@@ -132,10 +132,10 @@ a {
       rgba(9, 12, 8, 0.34) 48%,
       rgba(9, 12, 8, 0.08)
     ),
-    url("../ryokan-hero-seo.jpg") center / cover;
+    url("../ryokan-hero-generated.jpg") center / cover;
   opacity: 0;
-  transform: scale(1.04);
-  animation: heroImageReveal 2400ms cubic-bezier(0.22, 1, 0.36, 1) 1600ms both;
+  transform: scale(1.035);
+  animation: heroImageFadeIn 2400ms cubic-bezier(0.22, 1, 0.36, 1) 1550ms both;
 }
 
 /* 下部を紙色につなぐグラデーション */
@@ -160,10 +160,10 @@ a {
     radial-gradient(circle at 16% 34%, rgba(184, 138, 69, 0.16), transparent 28%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(10, 10, 8, 0.34));
   opacity: 0;
-  animation: heroOverlayReveal 2200ms cubic-bezier(0.22, 1, 0.36, 1) 1700ms both;
+  animation: heroOverlayFadeIn 2100ms cubic-bezier(0.22, 1, 0.36, 1) 1700ms both;
 }
 
-/* 文字位置：元の見え方に近い配置 */
+/* 文字位置 */
 .hero-content {
   position: relative;
   z-index: 3;
@@ -172,14 +172,14 @@ a {
   padding: 150px 0 18vh;
 }
 
-/* 文字：完全に見えない状態から、同時に先に出す */
+/* 文字：完全に見えない状態から、先に同時に出す */
 .hero-content > * {
   opacity: 0;
-  transform: translateY(10px);
-  animation: heroTextReveal 1500ms cubic-bezier(0.16, 1, 0.3, 1) 520ms both;
+  transform: translateY(12px);
+  animation: heroTextFadeIn 1500ms cubic-bezier(0.16, 1, 0.3, 1) 520ms both;
 }
 
-/* 以前の順番フェードを消して、全部同時にする */
+/* すべて同時に出す */
 .hero-content > :nth-child(1),
 .hero-content > :nth-child(2),
 .hero-content > :nth-child(3),
@@ -187,10 +187,10 @@ a {
   animation-delay: 520ms;
 }
 
-@keyframes heroTextReveal {
+@keyframes heroTextFadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
 
   to {
@@ -199,10 +199,10 @@ a {
   }
 }
 
-@keyframes heroImageReveal {
+@keyframes heroImageFadeIn {
   from {
     opacity: 0;
-    transform: scale(1.04);
+    transform: scale(1.035);
   }
 
   to {
@@ -211,7 +211,7 @@ a {
   }
 }
 
-@keyframes heroOverlayReveal {
+@keyframes heroOverlayFadeIn {
   from {
     opacity: 0;
   }
