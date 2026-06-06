@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ryokan corridor at dusk</title>
+  <desc id="desc">A quiet Japanese inn corridor facing a moss garden with warm lanterns.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#182114"/>
+      <stop offset="0.48" stop-color="#2c351f"/>
+      <stop offset="1" stop-color="#0b0c08"/>
+    </linearGradient>
+    <linearGradient id="walkway" x1="0.15" y1="1" x2="0.82" y2="0.4">
+      <stop offset="0" stop-color="#29160c"/>
+      <stop offset="0.4" stop-color="#69411f"/>
+      <stop offset="0.78" stop-color="#b46f2b"/>
+      <stop offset="1" stop-color="#45250f"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#31190c"/>
+      <stop offset="0.45" stop-color="#7b431d"/>
+      <stop offset="1" stop-color="#d08a35"/>
+    </linearGradient>
+    <linearGradient id="shoji" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2c160d"/>
+      <stop offset="0.45" stop-color="#c18a52"/>
+      <stop offset="1" stop-color="#f6cf8b"/>
+    </linearGradient>
+    <radialGradient id="lantern" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#fff0b5"/>
+      <stop offset="0.35" stop-color="#f7b85f"/>
+      <stop offset="0.72" stop-color="#a8531d" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#a8531d" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <pattern id="grain" width="90" height="90" patternUnits="userSpaceOnUse">
+      <path d="M8 13h72M4 45h84M20 78h58" stroke="#f0c476" stroke-opacity="0.05" stroke-width="2"/>
+      <circle cx="16" cy="27" r="1.6" fill="#fff7d4" fill-opacity="0.05"/>
+      <circle cx="70" cy="62" r="1.3" fill="#0d0b08" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="#0b0d08" opacity="0.18"/>
+
+  <g opacity="0.82">
+    <ellipse cx="250" cy="635" rx="500" ry="260" fill="#101609"/>
+    <ellipse cx="300" cy="565" rx="430" ry="190" fill="#1f2b18"/>
+    <ellipse cx="125" cy="500" rx="260" ry="145" fill="#2f4024"/>
+    <ellipse cx="530" cy="510" rx="250" ry="150" fill="#26371e"/>
+    <ellipse cx="695" cy="585" rx="190" ry="120" fill="#16220f"/>
+  </g>
+
+  <g opacity="0.62" filter="url(#soft)">
+    <circle cx="172" cy="610" r="66" fill="#d17a26"/>
+    <circle cx="465" cy="560" r="78" fill="#e49a3d"/>
+    <circle cx="800" cy="620" r="84" fill="#f4a741"/>
+  </g>
+
+  <g opacity="0.6">
+    <path d="M80 720c120-60 250-85 385-90 115-4 215 11 310 38" fill="none" stroke="#6c6e59" stroke-width="22" stroke-linecap="round"/>
+    <path d="M130 775c120-55 250-82 400-84 120-2 220 16 316 48" fill="none" stroke="#22271d" stroke-width="36" stroke-linecap="round"/>
+    <path d="M135 735c110-44 225-66 360-69 96-2 185 12 274 36" fill="none" stroke="#8a8870" stroke-opacity="0.58" stroke-width="18" stroke-linecap="round"/>
+  </g>
+
+  <path d="M515 900 1245 900 990 460 760 430Z" fill="url(#walkway)"/>
+  <path d="M786 431 1430 382 1600 560 1600 900 1240 900 990 460Z" fill="#221109"/>
+  <path d="M810 418 1600 350 1600 420 790 468Z" fill="url(#wood)"/>
+  <path d="M790 468 1600 420 1600 505 820 535Z" fill="#2b1509"/>
+
+  <g opacity="0.6">
+    <path d="M590 845 1128 842M645 780 1080 775M698 720 1042 714M745 665 1005 660M785 612 975 609" stroke="#e0a35b" stroke-width="2"/>
+    <path d="M555 900 764 435M688 900 838 443M830 900 906 451M978 900 964 461M1122 900 1005 472" stroke="#1b0e07" stroke-opacity="0.55" stroke-width="3"/>
+  </g>
+
+  <g>
+    <polygon points="1090,388 1600,350 1600,900 1240,900" fill="url(#shoji)" opacity="0.92"/>
+    <polygon points="1192,412 1600,384 1600,900 1328,900" fill="#130b07" opacity="0.38"/>
+    <g stroke="#4c260f" stroke-width="10" opacity="0.9">
+      <path d="M1180 410 1324 900"/>
+      <path d="M1305 398 1410 900"/>
+      <path d="M1438 386 1505 900"/>
+      <path d="M1565 374 1594 900"/>
+      <path d="M1134 504 1600 477"/>
+      <path d="M1174 635 1600 618"/>
+      <path d="M1212 760 1600 751"/>
+    </g>
+  </g>
+
+  <g>
+    <path d="M850 423 880 900" stroke="#7a3f16" stroke-width="32"/>
+    <path d="M1010 410 1070 900" stroke="#8b4b1b" stroke-width="34"/>
+    <path d="M1245 392 1358 900" stroke="#9e561e" stroke-width="38"/>
+    <path d="M1510 364 1600 815" stroke="#bd702b" stroke-width="44"/>
+    <path d="M815 402 1600 338" stroke="#5f2e10" stroke-width="30"/>
+    <path d="M770 455 1600 398" stroke="#b36c2b" stroke-width="16"/>
+  </g>
+
+  <g>
+    <ellipse cx="760" cy="780" rx="115" ry="86" fill="url(#lantern)" opacity="0.7" filter="url(#soft)"/>
+    <rect x="724" y="681" width="58" height="84" rx="5" fill="#271307"/>
+    <rect x="733" y="690" width="40" height="66" rx="3" fill="#f0ba65"/>
+    <path d="M724 681h58M724 765h58M753 681v84" stroke="#5b2e12" stroke-width="5"/>
+
+    <ellipse cx="1035" cy="585" rx="82" ry="62" fill="url(#lantern)" opacity="0.6" filter="url(#soft)"/>
+    <rect x="1014" y="526" width="34" height="50" rx="4" fill="#2a1408"/>
+    <rect x="1020" y="533" width="22" height="38" rx="2" fill="#f0ba65"/>
+  </g>
+
+  <g opacity="0.45" filter="url(#soft)">
+    <path d="M0 120c115 30 232 45 350 34 113-10 190-52 300-48 88 3 135 32 226 31 66-1 112-18 166-36v190H0Z" fill="#16250f"/>
+    <path d="M120 210c110-30 180-10 278-5 125 7 220-30 332-13 90 13 146 56 263 30v170H120Z" fill="#26361d" opacity="0.65"/>
+  </g>
+
+  <rect width="1600" height="900" fill="url(#grain)"/>
+  <rect width="1600" height="900" fill="url(#sky)" opacity="0.16"/>
+  <rect width="1600" height="900" fill="#000" opacity="0.08"/>
+</svg>
