@@ -1,0 +1,695 @@
+:root {
+  --ink: #151713;
+  --muted: #6f695d;
+  --paper: #f5f1e8;
+  --paper-deep: #ebe2d0;
+  --cedar: #5b3f2f;
+  --moss: #293a2b;
+  --moss-light: #5f7157;
+  --gold: #b88a45;
+  --white: #fffaf0;
+  --line: rgba(77, 59, 42, 0.18);
+  --shadow: 0 24px 70px rgba(27, 20, 13, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Inter", "Noto Serif JP", sans-serif;
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(20px, 4vw, 56px);
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 250, 240, 0.12);
+  background: rgba(19, 22, 16, 0.68);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 190px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 250, 240, 0.55);
+  border-radius: 50%;
+  font-family: "Noto Serif JP", serif;
+  font-size: 18px;
+  background: rgba(21, 23, 19, 0.24);
+  backdrop-filter: blur(10px);
+}
+
+.brand-name,
+.brand-sub {
+  display: block;
+}
+
+.brand-name {
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.brand-sub {
+  margin-top: -4px;
+  font-size: 11px;
+  color: rgba(255, 250, 240, 0.72);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 28px);
+  font-family: "Noto Serif JP", serif;
+  font-size: 14px;
+}
+
+.nav a {
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+  color: rgba(255, 250, 240, 0.86);
+}
+
+.nav a:hover {
+  border-color: rgba(255, 250, 240, 0.65);
+  color: var(--white);
+}
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, rgba(9, 12, 8, 0.72), rgba(9, 12, 8, 0.34) 48%, rgba(9, 12, 8, 0.08)),
+    url("../ryokan-hero-generated.jpg") center / cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22vh;
+  background: linear-gradient(180deg, rgba(245, 241, 232, 0), var(--paper));
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 16% 34%, rgba(184, 138, 69, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(10, 10, 8, 0.32));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 150px 0 18vh;
+}
+
+.kicker,
+.section-label {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-family: "Noto Serif JP", serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hero h1,
+section h2 {
+  margin: 0;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.hero h1 {
+  font-size: clamp(64px, 10vw, 124px);
+}
+
+.lead {
+  max-width: 660px;
+  margin: 22px 0 0;
+  color: rgba(255, 250, 240, 0.88);
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(18px, 2.4vw, 24px);
+}
+
+.hero-actions,
+.closing-inner .button {
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 11px 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button.primary {
+  color: #1d1a13;
+  background: var(--gold);
+}
+
+.button.ghost {
+  margin-left: 10px;
+  color: var(--white);
+  border-color: rgba(255, 250, 240, 0.48);
+  background: rgba(255, 250, 240, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.section-inner {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: clamp(72px, 10vw, 128px) 0;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 7vw, 92px);
+}
+
+section h2 {
+  max-width: 760px;
+  color: var(--moss);
+  font-size: clamp(34px, 5vw, 58px);
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+.prose {
+  color: #3c372f;
+  font-family: "Noto Serif JP", serif;
+  font-size: 18px;
+}
+
+.prose p {
+  margin: 0 0 22px;
+}
+
+.experience {
+  background:
+    linear-gradient(180deg, rgba(41, 58, 43, 0.94), rgba(25, 31, 23, 0.98)),
+    linear-gradient(90deg, rgba(184, 138, 69, 0.08), transparent);
+  color: var(--white);
+}
+
+.experience h2 {
+  color: var(--white);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 44px;
+  background: rgba(255, 250, 240, 0.16);
+  box-shadow: var(--shadow);
+}
+
+.feature {
+  min-height: 300px;
+  padding: clamp(26px, 4vw, 42px);
+  background: rgba(18, 23, 17, 0.68);
+}
+
+.feature-number {
+  display: block;
+  color: var(--gold);
+  font-family: "Noto Serif JP", serif;
+  font-size: 32px;
+}
+
+.feature h3,
+.skill-group h3 {
+  margin: 18px 0 12px;
+  font-family: "Noto Serif JP", serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.feature p {
+  margin: 0;
+  color: rgba(255, 250, 240, 0.78);
+}
+
+.skills {
+  background: var(--paper-deep);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 44px;
+}
+
+.skill-switcher {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.38fr) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 44px);
+  align-items: stretch;
+}
+
+.skill-tabs {
+  display: grid;
+  gap: 10px;
+}
+
+.skill-tab,
+.filter-button,
+.draw-button {
+  appearance: none;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: rgba(255, 250, 240, 0.72);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.skill-tab {
+  min-height: 58px;
+  padding: 14px 18px;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.skill-tab:hover,
+.filter-button:hover,
+.draw-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(184, 138, 69, 0.72);
+}
+
+.skill-tab.is-active,
+.filter-button.is-active {
+  color: var(--white);
+  border-color: var(--moss);
+  background: var(--moss);
+}
+
+.skill-panel,
+.lottery-card {
+  min-height: 260px;
+  padding: clamp(28px, 5vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 240, 0.72);
+  box-shadow: var(--shadow);
+}
+
+.panel-kicker,
+.record-type,
+.repo-meta {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-family: "Noto Serif JP", serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.skill-panel h3,
+.lottery-card h3,
+.record-card h3,
+.repo-card h3 {
+  margin: 0 0 14px;
+  color: var(--moss);
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.skill-panel p,
+.lottery-card p,
+.record-card p,
+.repo-card p,
+.repo-status {
+  color: var(--muted);
+}
+
+.skill-panel .panel-kicker,
+.lottery-card .panel-kicker {
+  color: var(--gold);
+}
+
+.skill-tags,
+.repo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.skill-tags span,
+.repo-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 10px;
+  border: 1px solid rgba(41, 58, 43, 0.16);
+  border-radius: 999px;
+  color: #3c372f;
+  background: rgba(255, 255, 255, 0.42);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.skill-layout {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.skill-group {
+  min-height: 210px;
+  padding: 28px;
+  border-top: 3px solid var(--gold);
+  background: rgba(255, 250, 240, 0.66);
+}
+
+.skill-group h3 {
+  color: var(--moss);
+}
+
+.skill-group p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.theme-lottery {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 240, 0.9), rgba(235, 226, 208, 0.92)),
+    linear-gradient(90deg, rgba(184, 138, 69, 0.08), rgba(41, 58, 43, 0.08));
+}
+
+.lottery-inner {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 6vw, 80px);
+  align-items: center;
+}
+
+.draw-button {
+  min-height: 46px;
+  margin-top: 24px;
+  padding: 10px 18px;
+  border-radius: 8px;
+}
+
+.records {
+  background: var(--paper);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -12px 0 28px;
+}
+
+.filter-button {
+  min-height: 42px;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.record-grid,
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.record-card,
+.repo-card {
+  min-height: 230px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 240, 0.68);
+}
+
+.record-card.is-hidden {
+  display: none;
+}
+
+.repositories {
+  background:
+    linear-gradient(180deg, rgba(41, 58, 43, 0.95), rgba(20, 23, 17, 0.98)),
+    linear-gradient(90deg, rgba(184, 138, 69, 0.08), transparent);
+  color: var(--white);
+}
+
+.repositories h2 {
+  color: var(--white);
+}
+
+.repo-status {
+  margin: -18px 0 26px;
+  color: rgba(255, 250, 240, 0.74);
+}
+
+.repo-status a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.repo-card {
+  display: grid;
+  align-content: space-between;
+  background: rgba(255, 250, 240, 0.08);
+  border-color: rgba(255, 250, 240, 0.16);
+}
+
+.repo-card h3 {
+  color: var(--white);
+  font-size: 24px;
+}
+
+.repo-card p {
+  color: rgba(255, 250, 240, 0.76);
+}
+
+.repo-card a {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 22px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.repo-tags span {
+  color: rgba(255, 250, 240, 0.88);
+  border-color: rgba(255, 250, 240, 0.18);
+  background: rgba(255, 250, 240, 0.08);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.closing {
+  background: var(--paper);
+}
+
+.closing-inner {
+  display: grid;
+  justify-items: start;
+  text-align: left;
+}
+
+.closing p {
+  max-width: 720px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-family: "Noto Serif JP", serif;
+  font-size: 18px;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px clamp(20px, 4vw, 56px);
+  color: rgba(255, 250, 240, 0.72);
+  background: #141711;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 86vh;
+    background-position: center;
+  }
+
+  .two-column,
+  .feature-grid,
+  .skill-switcher,
+  .skill-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .lottery-inner,
+  .record-grid,
+  .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    min-height: auto;
+  }
+
+  .section-heading {
+    display: block;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    padding: 14px 18px;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .hero-content,
+  .section-inner {
+    width: min(100% - 32px, 1120px);
+  }
+
+  .hero h1 {
+    font-size: 56px;
+  }
+
+  .hero-content {
+    padding-bottom: 11vh;
+  }
+
+  .hero::after {
+    height: 14vh;
+  }
+
+  .section-inner {
+    padding: 62px 0;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .button.ghost {
+    margin: 12px 0 0;
+  }
+
+  .skill-panel,
+  .lottery-card,
+  .record-card,
+  .repo-card {
+    padding: 22px;
+  }
+
+  .filter-bar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filter-button {
+    width: 100%;
+  }
+
+  .site-footer {
+    display: grid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button,
+  .skill-tab,
+  .filter-button,
+  .draw-button,
+  .reveal {
+    transition: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
