@@ -113,6 +113,7 @@ function setupThemeLottery() {
   const title = document.querySelector("#theme-title");
   const body = document.querySelector("#theme-body");
   const drawButton = document.querySelector("#theme-draw");
+  let currentThemeIndex = -1;
   const dayKey = new Date().toLocaleDateString("ja-JP", {
     timeZone: "Asia/Tokyo",
     year: "numeric",
@@ -121,8 +122,14 @@ function setupThemeLottery() {
   });
   const initialIndex = [...dayKey].reduce((sum, char) => sum + char.charCodeAt(0), 0) % themes.length;
 
-  function draw(index = Math.floor(Math.random() * themes.length)) {
-    const theme = themes[index];
+  function draw(index) {
+    let nextIndex = typeof index === "number" ? index : Math.floor(Math.random() * themes.length);
+    if (themes.length > 1 && nextIndex === currentThemeIndex) {
+      nextIndex = (nextIndex + 1) % themes.length;
+    }
+    currentThemeIndex = nextIndex;
+
+    const theme = themes[nextIndex];
     title.textContent = theme.title;
     body.textContent = theme.body;
   }
